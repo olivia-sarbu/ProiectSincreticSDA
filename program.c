@@ -1,15 +1,62 @@
 #include<stdio.h>
 
 void convertToBinary(int n) {
-
+	int x, v[32], i = 0, j;
+	printf("Numarul in binar este: ");
+	while (n != 0)
+	{
+		x = n % 2;
+		v[i] = x;
+		n = n / 2;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+		printf("%d", v[j]);
 }
 
 void convertToOctal(int n) {
+	int x, v[32], i = 0, j;
 
+	printf("Numarul in octal este: ");
+	while (n != 0)
+	{
+		x = n % 8;
+		v[i] = x;
+		n = n / 8;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+		printf("%d", v[j]);
 }
 
 void convertToHexadecimal(int n) {
+	int x, v[32], i = 0, j;
 
+	printf("Numarul in hexazecimal este: ");
+	while (n != 0)
+	{
+		x = n % 16;
+		v[i] = x;
+		n = n / 16;
+		i++;
+	}
+	for (j = i - 1; j >= 0; j--)
+	{
+		if (v[j] == 10)
+			printf("A");
+		else if (v[j] == 11)
+			printf("B");
+		else if (v[j] == 12)
+			printf("C");
+		else if (v[j] == 13)
+			printf("D");
+		else if (v[j] == 14)
+			printf("E");
+		else if (v[j] == 15)
+			printf("F");
+		else
+			printf("%d", v[j]);
+	}
 }
 
 int main()
